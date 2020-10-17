@@ -13,7 +13,7 @@ const API = {
     return json[json.length - 1];
   },
   async addExercise(data) {
-    console.log("In addExercise API");
+    console.log("** In addExercise API");
     const id = location.search.split("=")[1];
 
     const res = await fetch("/api/workouts/" + id, {

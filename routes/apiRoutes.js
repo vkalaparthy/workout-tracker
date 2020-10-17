@@ -14,8 +14,41 @@ module.exports = (app) => {
   });
 
   app.post("/api/workouts", (req, res) => {
-    console.log("do nothing for now in post");
+    console.log("** /api/workouts in post");
     console.log(req.body);
-    res.send("success");
+    db.Workout.create(req.body)
+      .then(dbWorkout => {
+        res.json(dbWorkout);
+      })
+      .catch(err => {
+        res.json(err);
+      })
+  });
+
+  // API.addExercise is coming as PUT request
+  app.put("/api/workouts/:id", (req, res) => {
+    console.log("** In apiRoutes put");
+    console.log(req.body);
+    db.Workout.update(
+      {
+        _id: req.params.id
+      },
+      {
+        $set: {
+          day: new Date(),
+          exercises: req.body
+        }
+      },
+  
+      (error, edited) => {
+        if (error) {
+          console.log(error);
+          res.send(error);
+        } else {
+          console.log(edited);
+          res.send(edited);
+        }
+      }
+    );
   });
 }
