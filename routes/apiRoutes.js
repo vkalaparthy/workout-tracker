@@ -29,13 +29,14 @@ module.exports = (app) => {
   app.put("/api/workouts/:id", (req, res) => {
     console.log("** In apiRoutes put");
     console.log(req.body);
-    db.Workout.update(
+    // db.Workout.update(
+      db.Workout.findByIdAndUpdate(
       {
         _id: req.params.id
       },
       {
         $set: {
-          day: new Date(),
+          // day: new Date(),
           exercises: req.body
         }
       },
@@ -51,4 +52,27 @@ module.exports = (app) => {
       }
     );
   });
+
+  app.get("/api/workouts/range", (req, res) => {
+    console.log("*** In range find");
+    db.Workout.find({}).limit(7)
+    .then(dbWorkout => {
+      res.json(dbWorkout);
+    })
+    .catch(err => {
+      res.json(err);
+    });
+  });
+
+  app.delete("/api/workouts", ({ body }, res) => {
+    Workout.findByIdAndDelete(body.id, (err, docs) => {
+      if (err){ 
+          console.log(err) 
+      } 
+      else{ 
+          console.log("Deleted : ", docs); 
+      } 
+    });
+  });
+
 }
