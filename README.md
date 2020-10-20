@@ -18,7 +18,7 @@ Clone the repository and run "npm install", to istall all the packages that are 
 
 Or Run the app in Heroku, [here](https://vk-fitness-tracker.herokuapp.com/)  
 Demo:  
-![demo](./images/Fitness Tracker.gif) 
+![demo](./images/FitnessTracker.gif) 
 ## License
 Copyright © 2020-present, Vani Kalaparthy. Released under the MIT License.
 ## Contributing
