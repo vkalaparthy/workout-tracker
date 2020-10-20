@@ -10,9 +10,9 @@ An application that uses MongoDB, Mongoose and Express to track the workouts to 
 * [Tests](#tests)
 * [Questions](#questions)
 ## Installation
-This serach application is located at GitHub at  and the application can be accessed from https://vkalaparthy.github.io/NYTimes-search/
+This serach application is located at GitHub at  and the application can be accessed from [here](https://vk-fitness-tracker.herokuapp.com/)
 ## Usage
-Clone the repository and run "npm install", to istall all the packages that are necessary to run the application. Since this application used MongoDB and Mongoose, make sure the Mongo is running in your environment.  Add the seeds by running "node seeds/seed.js" and then run "nodemon server.js".  The application in loacalhost will look like this:  
+Clone the repository https://github.com/vkalaparthy/workout-tracker and run "npm install", to istall all the packages that are necessary to run the application. Since this application used MongoDB and Mongoose, make sure the Mongo is running in your environment.  Add the seeds by running "node seeds/seed.js" and then run "nodemon server.js".  The application in loacalhost will look like this:  
 
 ![firstPage](./images/Capture.JPG)  
 
