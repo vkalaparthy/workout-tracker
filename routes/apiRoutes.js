@@ -2,8 +2,9 @@ const db = require("../models");
 
 module.exports = (app) => {
 
+  // find the workouts
   app.get("/api/workouts", (req, res) => {
-    console.log(" ********* In get api/workouts");
+    // console.log(" ********* In get api/workouts");
     db.Workout.find({})
       .then(dbWorkout => {
         res.json(dbWorkout);
@@ -13,9 +14,10 @@ module.exports = (app) => {
       });
   });
 
+  // Cretae a workout
   app.post("/api/workouts", (req, res) => {
-    console.log("** /api/workouts in post");
-    console.log(req.body);
+    // console.log("** /api/workouts in post");
+    // console.log(req.body);
     db.Workout.create(req.body)
       .then(dbWorkout => {
         res.json(dbWorkout);
@@ -25,11 +27,10 @@ module.exports = (app) => {
       })
   });
 
-  // API.addExercise is coming as PUT request
+  // this function supports addExercise
   app.put("/api/workouts/:id", (req, res) => {
-    console.log("** In apiRoutes put");
-    console.log(req.body);
-    // db.Workout.update(
+    // console.log("** In apiRoutes put");
+    // console.log(req.body);
       db.Workout.findByIdAndUpdate(
       {
         _id: req.params.id

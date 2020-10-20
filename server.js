@@ -16,8 +16,7 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-//  The below of routes to handle html and api rutes (Refer Note Taker for now)
-//  remove the above comment before submitting
+//  The below are the routes to handle html and api routes
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
 
